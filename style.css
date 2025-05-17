@@ -1,0 +1,320 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #111;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navbar Styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+
+.logo a {
+    font-size: 1.8rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #1abc9c;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.dark-mode-toggle input {
+    margin-right: 10px;
+}
+
+/* Adding the blurred background effect to all sections */
+.background-blur {
+    background: radial-gradient(circle at 30% 30%, rgba(63, 94, 251, 0.6), rgba(252, 70, 107, 0.6) 60%, transparent 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.background-blur::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(63, 94, 251, 0.2) 0%, rgba(252, 70, 107, 0.15) 40%, transparent 70%);
+    filter: blur(150px);
+    z-index: -1;
+    transform: rotate(30deg);
+}
+
+#intro, #who, #contact, #education {
+    background: #111; /* Base background color */
+    color: #fff;
+    padding: 80px 20px;
+    position: relative;
+}
+
+/* Applying the blur background to specific sections */
+#intro, #who, #contact, #education {
+    background-color: rgba(0, 0, 0, 0.8);
+    background-blend-mode: multiply;
+    color: #fff;
+    padding: 80px 20px;
+    position: relative;
+}
+
+#intro.background-blur, #who.background-blur, #contact.background-blur, #education.background-blur {
+    background-color: transparent;
+}
+
+/* Intro Section */
+#intro {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-content {
+    max-width: 800px;
+}
+
+.intro-content h1 {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.intro-content h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.intro-content p {
+    font-size: 1.2rem;
+}
+
+.location-icon {
+    margin-right: 8px;
+}
+
+/* Who Section */
+#who h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center; /* Centering the heading */
+}
+
+#who p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #bbb;
+}
+
+/* Contact Section */
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center; /* Centering the heading */
+}
+
+#contact p {
+    font-size: 1.2rem;
+}
+
+#contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+#contact ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#contact ul li a {
+    color: #1abc9c;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+#contact ul li a:hover {
+    text-decoration: underline;
+}
+
+/* WHO Section Styling */
+.who-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.who-text {
+    flex: 1 1 50%;
+    max-width: 600px;
+    margin-right: 20px;
+}
+
+.who-text h2 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.who-text .highlight {
+    color: #1abc9c;
+}
+
+.who-text p {
+    color: #bbb;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.who-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    flex: 1 1 40%;
+}
+
+.who-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.who-images img:hover {
+    transform: scale(1.05);
+}
+
+/* Education Section */
+#education h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+/* Timeline Styling */
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    text-align: left;
+    order: -1;
+}
+
+.timeline-date {
+    flex: 1;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.timeline-date span {
+    font-size: 1.2rem;
+    background-color: #1abc9c;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.timeline-content {
+    flex: 3;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    color: #bbb;
+    position: relative;
+}
+
+.timeline-content h3 {
+    color: #1abc9c;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Vertical line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background-color: #1abc9c;
+    transform: translateX(-50%);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #1abc9c;
+    border-radius: 50%;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+}
+
+.timeline-item:nth-child(even) .timeline-date {
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 0;
+}
